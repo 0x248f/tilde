@@ -18,12 +18,9 @@ export class NewComponent {
   submit(form: NewPostForm) {
     console.log(form);
     let addr = "/api/blog";
-    let httpOptions = {
-      headers: new HttpHeaders()
-        .set('Content-Type', 'application/json')
-    }
-    let data = JSON.stringify(form);
-    this.httpClient.post(addr, data, httpOptions)
+    let headers = new HttpHeaders()
+        .set('Content-Type', 'application/json');
+    this.httpClient.post<string>(addr, JSON.stringify(form), {headers: headers})
       .subscribe(data => console.log(data));
   }
 }

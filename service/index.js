@@ -2,11 +2,12 @@ var express = require('express');
 var app = express();
 
 app.use('/', express.static('../dist/tilde'));
+app.use(express.json());
 
 app.post('/api/blog', (req, res) => {
     console.log('Got post');
     console.log(req.body);
-    res.send('ok');
+    res.json({status: 'ok'});
 });
 
 app.listen(4111, () => {
