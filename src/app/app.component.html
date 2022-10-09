@@ -1,0 +1,24 @@
+<div class="header">
+  <img src="/i/head.jpg" />
+  <div class="headerText">
+    <h1>Laurent</h1>
+    <h4>Développeur full-stack</h4>
+    <p>C++ | Python | Qt | Angular | Node.js</p>
+    <a [routerLink]="['/']">Accueil</a>
+    <a [routerLink]="['/blog']">Blog</a>
+    <a [routerLink]="['/projets']">Projets</a>
+  </div>
+  <div class="icons">
+    <a href="https://twitter.com/0x248f">
+      <img src="/assets/Twitter Logo.svg" alt="Twitter" />
+    </a>
+    <a href="https://github.com/0x248f">
+      <img src="/assets/Github Mark.png" alt="Github" />
+    </a>
+  </div>
+</div>
+<div class="spacer"></div>
+
+<div class="routerOutlet">
+  <router-outlet></router-outlet>
+</div>

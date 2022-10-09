@@ -1,0 +1,9 @@
+.post {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.post button {
+    width: 20%;
+    height: 40px;
+}

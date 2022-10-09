@@ -1,0 +1,8 @@
+<router-outlet></router-outlet>
+<div class="posts">
+    <div *ngFor="let post of posts | async">
+        <tld-post [post]="post"></tld-post>
+    </div>
+</div>
+
+<button [routerLink]="['/blog/new']">Nouveau Poste</button>

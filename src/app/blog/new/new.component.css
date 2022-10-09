@@ -1,0 +1,19 @@
+.newForm {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+
+.newForm input[type=text] {
+    width: 50%;
+}
+
+.newForm textarea {
+    height: 500px;
+}
+
+.newForm button {
+    margin-left: auto;
+    width:10%;
+}
