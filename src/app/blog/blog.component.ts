@@ -17,4 +17,8 @@ export class BlogComponent {
         map(posts => posts.sort((p1, p2) => p1.time < p2.time ? 1 : -1))
       );
   }
+
+  doLogin(password: string) {
+    this.httpClient.post<string>('/api/login', password);
+  }
 }

@@ -1,4 +1,4 @@
-import { readFile, writeFile } from 'node:fs/promises';
+import { readFile, writeFile, rm } from 'node:fs/promises';
 import express from 'express';
 
 import posts from './posts/posts.json' assert { type: 'json' };
@@ -8,6 +8,12 @@ var app = express();
 const appPath = '../dist/tilde';
 app.use('/', express.static(appPath));
 app.use(express.json());
+
+app.get('/api/login', (req, res) => {
+  let password = res.body;
+  if (password !== '248mil')
+    res.send('null');
+})
 
 const postListPath = './posts/posts.json';
 app.post('/api/blog', async (req, res) => {
@@ -25,8 +31,7 @@ app.post('/api/blog', async (req, res) => {
     };
 
     const filename = post.title.toLowerCase().replaceAll(' ', '-') + '.md';
-    const filepath = './posts';
-    const file = filepath + '/' + filename;
+    const file = `./posts/${filename}`;
     console.log(file);
     try {
       await writeFile(file, post.content);
@@ -35,22 +40,30 @@ app.post('/api/blog', async (req, res) => {
     }
 
     posts.push({time: post.time, title: post.title, name: filename});
-    try {
-      await writeFile(postListPath, JSON.stringify(posts, null, 2));
-      res.send({written: true});
-    } catch (e) {
-      res.send({written: false, error: 'jsonfile'});
-    }
+    writeFile(postListPath, JSON.stringify(posts, null, 2));
 });
 
 app.get('/api/blog/post/:filename', async (req, res) => {
   res.set('Content-Type', 'text/markdown');
   try {
-    let content = await readFile('./posts/' + req.params.filename);
+    let content = await readFile(`./posts/${req.params.filename}`);
     res.send(content);
   } catch (e) {
     res.send(e);
   }
+});
+
+app.delete('/api/blog/post/:filename', async (req, res) => {
+  console.log(`Deleting post ${req.params.filename}`)
+  try {
+    await rm(`./posts/${req.params.filename}`)
+  } catch (e) {
+    console.log(e);
+  }
+
+  posts = posts.filter(post => post.name !== req.params.filename);
+  writeFile(postListPath, JSON.stringify(posts, null, 2));
+  req.send({deleted: true});
 });
 
 app.get('/api/blog/posts', (req, res) => {

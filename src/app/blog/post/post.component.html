@@ -1,6 +1,11 @@
 <div class="post" *ngIf="post">
-    <p>{{ post.time }}</p>
-    <button (click)="fetchPost()">{{ post.title }}</button>
+    <div class="postCrown">
+      <p>{{ post.time }}</p>
+      <button (click)="fetchPost()">{{ post.title }}</button>
+    </div>
+    <div class="deleteButton">
+    `<button (click)="deletePost()">delete post</button>
+    </div>
     <div *ngIf="contentShown">
         <div *ngIf="content | async as c">
             <span [innerHTML]="marked.parse(c)"></span>
