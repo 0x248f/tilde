@@ -33,4 +33,9 @@ export class PostComponent {
       }
     }
   }
+
+  deletePost() {
+    this.httpClient.delete(`/api/blog/post/${ this.post?.name }`)
+      .subscribe();
+  }
 }
