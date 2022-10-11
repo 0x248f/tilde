@@ -12,7 +12,7 @@ import { Post } from './post/post.component';
 export class BlogComponent {
   posts: Observable<Post[]>;
   constructor(private httpClient: HttpClient) {
-    this.posts = httpClient.get<Post[]>('/assets/blog/posts.json')
+    this.posts = httpClient.get<Post[]>('/api/blog/posts')
       .pipe(
         map(posts => posts.sort((p1, p2) => p1.time < p2.time ? 1 : -1))
       );

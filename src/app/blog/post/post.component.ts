@@ -6,8 +6,8 @@ import { marked } from 'marked';
 
 export interface Post {
   time: string,
-  name: string,
-  link: string
+  title: string,
+  name: string
 }
 
 @Component({
@@ -28,7 +28,7 @@ export class PostComponent {
       if (this.contentShown) {
         this.contentShown = false;
       } else {
-        this.content = this.httpClient.get(this.post.link, {responseType: 'text'})
+        this.content = this.httpClient.get('/api/blog/post/'+this.post.name, {responseType: 'text'})
         this.contentShown = true;
       }
     }
