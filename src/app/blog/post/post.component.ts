@@ -28,7 +28,7 @@ export class PostComponent {
       if (this.contentShown) {
         this.contentShown = false;
       } else {
-        this.content = this.httpClient.get('/api/blog/post/'+this.post.name, {responseType: 'text'})
+        this.content = this.httpClient.get(`/api/blog/post/${this.post.name}`, {responseType: 'text'})
         this.contentShown = true;
       }
     }
