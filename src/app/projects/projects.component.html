@@ -1,1 +1,5 @@
-<p>projects works!</p>
+<div class="projects">
+    <div *ngFor="let project of projects$ | async">
+        <tld-project [project]="project"></tld-project>
+    </div>
+</div>

@@ -1,0 +1,7 @@
+<div class="project" *ngIf="project">
+    <a [href]="project.repo">
+        <h1>{{project.name}}</h1>
+    </a>
+    <img [src]="project.image"/>
+    <p>{{project.description}}</p>
+</div>

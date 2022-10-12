@@ -12,6 +12,7 @@ import { PostComponent } from './blog/post/post.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NewComponent } from './blog/new/new.component';
+import { ProjectComponent } from './projects/project/project.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { NewComponent } from './blog/new/new.component';
     ProjectsComponent,
     PostComponent,
     NewComponent,
+    ProjectComponent,
   ],
   imports: [
     BrowserModule,
