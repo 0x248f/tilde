@@ -71,5 +71,5 @@ app.get('/api/blog/posts', (req, res) => {
 });
 
 app.listen(4111, () => {
-    console.log('Listening on port 4111');
+  console.log('Listening on port 4111');
 });

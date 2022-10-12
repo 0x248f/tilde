@@ -1,23 +1,10 @@
 .header {
     display: flex;
+    justify-content: center;
     text-align: center;
     vertical-align: middle;
-    width: 45%;
-    height: auto;
-    margin: auto;
+    height: 200px;
     background-position: center;
-}
-
-@media screen and (max-width: 1000px) {
-    .header {
-        width: 100%;
-    }
-}
-
-@media screen and (min-width: 1800px) {
-    .header {
-        width: 30%;
-    }
 }
 
 .header img {
@@ -80,5 +67,9 @@
 }
 
 .routerOutlet {
-    height: 70vh;
+  position: absolute;
+  overflow: scroll;
+  top: 210px;
+  bottom: 0px;
+  width: 100%;
 }
