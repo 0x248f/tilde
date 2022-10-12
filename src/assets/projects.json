@@ -1,0 +1,20 @@
+[
+    {
+        "name": "jesi",
+        "image": "/i/projects/jesi.png",
+        "description": "Un client IRC écrit en JavaScript qui peut être scripté.",
+        "repo": "https://github.com/0x248f/jesi"
+    },
+    {
+        "name": "cx",
+        "image": "/i/projects/cx.png",
+        "description": "Un sauteur de répertoires qui maintient une liste basée sur la \"frecency\".",
+        "repo": "https://github.com/0x248f/cx"
+    },
+    {
+        "name": "deepsnek",
+        "image": "/i/projects/deepsnek.png",
+        "description": "Un jeu de snake avec un DQN, programmé en Common Lisp et recopié en Python pour Keras.",
+        "repo": "https://github.com/0x248f/deepsnek"
+    }
+]
