@@ -1,0 +1,16 @@
+.project {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 100px 20px;
+  padding: 0px 50px;
+}
+
+.project a {
+  text-decoration: none;
+  color: rgb(0, 174, 255);
+}
+
+.project img {
+  height: 500px;
+  width: auto;
+}

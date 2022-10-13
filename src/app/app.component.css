@@ -1,18 +1,16 @@
 .header {
     display: flex;
+    align-content: center;
     justify-content: center;
-    text-align: center;
-    vertical-align: middle;
     height: 200px;
-    background-position: center;
 }
 
 .header img {
-    display: block;
-    width: auto;
-    height: 200px;
+    display: inline-flex;
+    height: 150px;
+    width: 150px;
     border-radius: 50%;
-    margin-right: 50px;
+    align-self: center;
 }
 
 @font-face {
@@ -20,13 +18,16 @@
     src: url('/assets/Monego-Regular.otf') format('opentype');
 }
 
+.headerText {
+  display: inline-flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 .headerText h1 {
     font-family: Monego;
     font-size: 72px;
-    margin-bottom: 0px;
-    margin-top: 0px;
-    margin-left: 20px;
-    margin-right: 20px;
+    margin: 0px 20px;
 }
 
 .headerText h4 {
@@ -40,11 +41,15 @@
     margin-top: 0px;
 }
 
-.headerText a {
+.headerLinks {
+  display: block;
+}
+
+.headerLinks a {
     font-family: Arial;
     color: black;
     text-decoration: none;
-    padding: 4px 4px 4px 4px;
+    padding: 0px 16px;
     font-size: 20px;
 }
 
@@ -52,6 +57,7 @@
     display: flex;
     flex-direction: column;
     margin-top: 20px;
+    margin-right: 118px;
 }
 
 .icons img {
@@ -71,4 +77,5 @@
   overflow: scroll;
   top: 210px;
   bottom: 0px;
+  width: 98%;
 }

@@ -4,6 +4,7 @@ import express from 'express';
 import posts from './posts/posts.json' assert { type: 'json' };
 
 var app = express();
+var postList = posts;
 
 const appPath = '../dist/tilde';
 app.use('/', express.static(appPath));
@@ -39,8 +40,8 @@ app.post('/api/blog', async (req, res) => {
       res.send({written: false, error: 'postfile'});
     }
 
-    posts.push({time: post.time, title: post.title, name: filename});
-    writeFile(postListPath, JSON.stringify(posts, null, 2));
+    postList.push({time: post.time, title: post.title, name: filename});
+    writeFile(postListPath, JSON.stringify(postList, null, 2));
 });
 
 app.get('/api/blog/post/:filename', async (req, res) => {
@@ -61,13 +62,13 @@ app.delete('/api/blog/post/:filename', async (req, res) => {
     console.log(e);
   }
 
-  posts = posts.filter(post => post.name !== req.params.filename);
-  writeFile(postListPath, JSON.stringify(posts, null, 2));
-  req.send({deleted: true});
+  postList = posts.filter(post => post.name !== req.params.filename);
+  writeFile(postListPath, JSON.stringify(postList, null, 2));
+  res.send({deleted: true});
 });
 
 app.get('/api/blog/posts', (req, res) => {
-  res.json(posts);
+  res.json(postList);
 });
 
 app.listen(4111, () => {
