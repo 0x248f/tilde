@@ -1,7 +1,10 @@
 <div class="project" *ngIf="project">
+  <div class="projectName">
+    <h1>{{project.name}}</h1>
     <a [href]="project.repo">
-        <h1>{{project.name}}</h1>
+      <img class="projectGithubIcon" src="/assets/Github Mark.png" alt="Github" />
     </a>
-    <img [src]="project.image"/>
-    <p>{{project.description}}</p>
+  </div>
+  <img [src]="project.image"/>
+  <p>{{project.description}}</p>
 </div>
