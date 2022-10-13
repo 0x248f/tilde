@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs';
 
 import { marked } from 'marked';
+import { LoginService } from 'src/app/login/login.service';
 
 export interface Post {
   time: string,
@@ -21,7 +22,8 @@ export class PostComponent {
   contentShown: boolean = false;
   marked: any = marked;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,
+              public loginService: LoginService) { }
 
   fetchPost() {
     if (this.post) {

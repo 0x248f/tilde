@@ -4,5 +4,6 @@
     <tld-post [post]="post"></tld-post>
   </div>
 </div>
-
-<button class="newPost" [routerLink]="['/new']">Nouveau Poste</button>
+<div *ngIf="loginService.loggedIn">
+  <button class="newPost" [routerLink]="['/new']">Nouveau Poste</button>
+</div>

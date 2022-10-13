@@ -11,10 +11,10 @@ app.use('/', express.static(appPath));
 app.use(express.json());
 
 app.get('/api/login', (req, res) => {
-  let password = res.body;
-  if (password !== '248mil')
+  let {username, password} = res.body;
+  if (username !== 'laurent' && password !== '248mil')
     res.send('null');
-})
+});
 
 const postListPath = './posts/posts.json';
 app.post('/api/blog', async (req, res) => {

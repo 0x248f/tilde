@@ -13,6 +13,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { NewComponent } from './blog/new/new.component';
 import { ProjectComponent } from './projects/project/project.component';
+import { LoginComponent } from './login/login.component';
+
+import { LoginService } from './login/login.service';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,7 @@ import { ProjectComponent } from './projects/project/project.component';
     PostComponent,
     NewComponent,
     ProjectComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,10 @@ import { ProjectComponent } from './projects/project/project.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [
+    LoginService,
+    {provide: LocationStrategy, useClass: HashLocationStrategy}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

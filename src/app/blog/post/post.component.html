@@ -3,8 +3,8 @@
       <p>{{ post.time }}</p>
       <button (click)="fetchPost()">{{ post.title }}</button>
     </div>
-    <div class="deleteButton">
-    `<button (click)="deletePost()">delete post</button>
+    <div class="deleteButton" *ngIf="loginService.loggedIn">
+      <button (click)="deletePost()">delete post</button>
     </div>
     <div *ngIf="contentShown">
         <div *ngIf="content | async as c">

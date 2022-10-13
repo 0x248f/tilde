@@ -1,0 +1,7 @@
+<div class="loginBox">
+  <form #f="ngForm" (ngSubmit)="doLogin(f.value)">
+    Username: <input type="text" name="username" ngModel /><br />
+    Password: <input type="password" name="password" ngModel /><br />
+    <input type="submit"/>
+  </form>
+</div>
