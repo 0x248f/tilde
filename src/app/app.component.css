@@ -113,3 +113,9 @@
   bottom: 0px;
   width: 98%;
 }
+
+@media (max-width: 640px) {
+  .routerOutlet {
+    top: 130px;
+  }
+}
