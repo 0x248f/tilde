@@ -18,7 +18,9 @@
       <img src="/assets/Github Mark.png" alt="Github" />
     </a>
   </div>
-  <a class="login" [routerLink]="['/login']">login</a>
+  <div *ngIf="!loginService.loggedIn">
+    <a class="login" [routerLink]="['/login']">login</a>
+  </div>
 </div>
 <div class="spacer"></div>
 

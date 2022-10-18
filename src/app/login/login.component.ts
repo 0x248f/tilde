@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { LoginService } from './login.service';
 
 interface LoginForm {
   username: string,
@@ -13,9 +14,15 @@ interface LoginForm {
 })
 export class LoginComponent {
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient,
+              private loginService: LoginService) { }
 
   doLogin(form: LoginForm) {
-    this.httpClient.post<LoginForm>('/api/login', form);
+    this.httpClient.post('/api/login', form, {responseType: 'text'})
+      .subscribe(response => {
+        console.log(response);
+        if (response === 'ok')
+          this.loginService.loggedIn = true;
+      });
   }
 }

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { LoginService } from './login/login.service';
 
 @Component({
   selector: 'tld-root',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tilde';
+  constructor(public loginService: LoginService) {}
 }
