@@ -9,10 +9,17 @@
   width: 500px;
 }
 
+@media (max-width: 640px) {
+  .project {
+    width: 300px;
+  }
+}
+
 .project img {
-  height: 500px;
+  max-height: 500px;
   width: auto;
   max-width: 500px;
+  object-fit: contain;
 }
 
 .projectName {
