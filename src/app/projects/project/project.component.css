@@ -9,12 +9,6 @@
   width: 500px;
 }
 
-@media (max-width: 640px) {
-  .project {
-    width: 300px;
-  }
-}
-
 .project img {
   max-height: 500px;
   width: auto;
