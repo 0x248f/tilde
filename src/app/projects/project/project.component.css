@@ -17,6 +17,7 @@
   width: auto;
   max-width: 500px;
   object-fit: contain;
+  margin: auto;
 }
 
 .projectName {
