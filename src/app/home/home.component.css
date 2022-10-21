@@ -1,6 +1,8 @@
 .contentText {
-  width: 70%;
-  margin: auto;
+  width: 100%;
+  height: 100%;
+  background-color: #3f3f3f;
+  color: #dcdccc;
 }
 
 .contentText h2 {
