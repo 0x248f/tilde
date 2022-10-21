@@ -64,7 +64,8 @@
 
 .icons img {
   width: 32px;
-  height: 32px;
+  height: auto;
+  border-radius: 0;
 }
 
 .login {
