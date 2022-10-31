@@ -5,17 +5,16 @@
   margin: 50px 20px;
   padding: 0px 50px;
 
-  height: 700px;
-  width: 500px;
+  min-height: 500px;
+  width: 40vw;
 
-  background-color: #792611;
+  background-color: #117968;
   border-radius: 20px;
 }
 
 .project img {
-  max-height: 500px;
-  width: auto;
-  max-width: 500px;
+  max-height: 400px;
+  max-width: 400px;
   object-fit: contain;
   margin: auto;
 }
